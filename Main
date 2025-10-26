@@ -1,0 +1,26 @@
+public class Main {
+    public static void main(String[] args) {
+        Pracownik[] pracownicy = new Pracownik[3];
+
+        pracownicy[0] = new Zarzad("Anna", 45, "Dyrektor");
+        pracownicy[1] = new Programista("Marek", 30, "Java");
+        pracownicy[2] = new Tester("Karolina", 28, true);
+
+        for (Pracownik p : pracownicy) {
+            p.przedstawSie();
+        }
+        Bezrobotny bezrobotny = new Bezrobotny("Aleksander", 19, true);
+        bezrobotny.przedstawSie();
+        System.out.println("\nwykonywanie pracy:\n");
+
+        for (Pracownik p : pracownicy) {
+            if (p instanceof Pracuje) {
+                ((Pracuje)p).wykonajPrace();
+
+            }
+        }
+        bezrobotny.wykonajPrace();
+
+
+    }
+}
